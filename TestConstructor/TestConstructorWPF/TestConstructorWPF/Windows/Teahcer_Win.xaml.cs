@@ -16,6 +16,7 @@ namespace TestConstructorWPF.Windows
 {
     public partial class Teahcer_Win : Window
     {
+        public int id_teacher;
         public Teahcer_Win()
         {
             InitializeComponent();

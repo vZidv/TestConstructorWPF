@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace TestConstructorWPF.Pages
 {
@@ -31,6 +33,20 @@ namespace TestConstructorWPF.Pages
         private void Back_button_Click(object sender, RoutedEventArgs e)
         {
            teahcer.MainFrame.Content = new Pages.TeacherStartMenu_Page() { teahcer = this.teahcer };
+        }
+
+        private void addAdemicSubject_button_Click(object sender, RoutedEventArgs e)
+        {
+            MySqlConnectClass.SqlConnect();
+
+            SqlCommand command = new SqlCommand("INSERT INTO AdemicSubject (Name,Description,Teacher) VALUES (@Name,@Description,@Teacher)", MySqlConnectClass.sqlCon);
+
+            command.Parameters.AddWithValue("@Name", Name_tb.Text);
+            command.Parameters.AddWithValue("@Description", description_tb.Text);
+            command.Parameters.AddWithValue("@Teacher", teahcer.id_teacher);
+
+            command.ExecuteNonQuery();
+            MessageBox.Show("Дисциплина", "Добавлена");
         }
     }
 }

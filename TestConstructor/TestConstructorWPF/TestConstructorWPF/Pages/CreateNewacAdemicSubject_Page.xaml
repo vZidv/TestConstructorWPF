@@ -19,18 +19,18 @@
             <Button Content="Назад" x:Name="Back_button"
             Height="35" Width="130" HorizontalAlignment="Right" Margin="0,0,10,0"
             Style="{DynamicResource RoundedButtonApp}" Click="Back_button_Click" />
-            <Button Content="Добавить" x:Name="refresh_button"
+            <Button Content="Добавить" x:Name="addAdemicSubject_button"
             Height="35" Width="130" HorizontalAlignment="Right" Margin="0,0,10,0"
-            Style="{DynamicResource RoundedButtonApp}" />
+            Style="{DynamicResource RoundedButtonApp}" Click="addAdemicSubject_button_Click" />
         </StackPanel>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="1">
             <TextBlock Text="Название" 
                        Style="{DynamicResource TextBlockStyle}" HorizontalAlignment="Left" FontSize="26"/>
-            <TextBox 
+            <TextBox x:Name="Name_tb"
                 Style="{DynamicResource TextboxStyle}" Height="50" Width="300" HorizontalAlignment="Left"/>
             <TextBlock Text="Описание" 
                        Style="{DynamicResource TextBlockStyle}" HorizontalAlignment="Left" FontSize="26"/>
-            <TextBox 
+            <TextBox  x:Name="description_tb"
                 Style="{DynamicResource TextboxStyle}" Height="180" Width="350"/>
 
         </StackPanel>

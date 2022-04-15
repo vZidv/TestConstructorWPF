@@ -52,7 +52,8 @@ namespace TestConstructorWPF.Pages
                     }
                     else if (table.Rows[0][6].ToString() == "teacher")
                     {
-                        Windows.Teahcer_Win teahcer = new Windows.Teahcer_Win();
+                        SqlCommand command = new SqlCommand($"SELECT id FROM UserTable WHERE Login = '{login_Textbox.Text}' AND Password = '{password_Textbox.Text}' AND Type='teacher'", MySqlConnectClass.sqlCon);
+                        Windows.Teahcer_Win teahcer = new Windows.Teahcer_Win() { id_teacher = Convert.ToInt32(command.ExecuteScalar())};
                         teahcer.Show();
                     }
                     autorizationWindow.Close();

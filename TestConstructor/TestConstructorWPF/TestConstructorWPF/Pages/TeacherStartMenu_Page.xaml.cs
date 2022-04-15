@@ -19,6 +19,7 @@ namespace TestConstructorWPF.Pages
     public partial class TeacherStartMenu_Page : Page
     {
         public Windows.Teahcer_Win teahcer;
+        
         MySqlConnectClass connectClass = new MySqlConnectClass();
         public TeacherStartMenu_Page()
         {
