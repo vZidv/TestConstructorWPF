@@ -45,14 +45,15 @@ namespace TestConstructorWPF.Pages
 
                 if (table.Rows.Count > 0)
                 {
-                    if (table.Rows[0][7].ToString() == "admin")
+                    if (table.Rows[0][6].ToString() == "admin")
                     {
                         Windows.Admin_Win admin = new Windows.Admin_Win();
                         admin.Show();
                     }
-                    else if (table.Rows[0][7].ToString() == "user")
+                    else if (table.Rows[0][6].ToString() == "teacher")
                     {
-                        
+                        Windows.Teahcer_Win teahcer = new Windows.Teahcer_Win();
+                        teahcer.Show();
                     }
                     autorizationWindow.Close();
                 }

@@ -82,8 +82,17 @@
     <Compile Include="Pages\AdminMain_Page.xaml.cs">
       <DependentUpon>AdminMain_Page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CreateNewacAdemicSubject_Page.xaml.cs">
+      <DependentUpon>CreateNewacAdemicSubject_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TeacherStartMenu_Page.xaml.cs">
+      <DependentUpon>TeacherStartMenu_Page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Admin_Win.xaml.cs">
       <DependentUpon>Admin_Win.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Teahcer_Win.xaml.cs">
+      <DependentUpon>Teahcer_Win.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -141,7 +150,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\CreateNewacAdemicSubject_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TeacherStartMenu_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Admin_Win.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Teahcer_Win.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

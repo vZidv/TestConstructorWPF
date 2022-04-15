@@ -18,7 +18,7 @@ namespace TestConstructorWPF
 
         public static void SqlConnect()
         {
-            sqlCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Артём\Проекты и их материалы\TestConstructor\TestConstructorWPF\TestConstructorWPF\TestConstructor.mdf;Integrated Security=True");
+            sqlCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Артём\Проекты и их материалы\TestConstructorRepos\TestConstructorWPF\TestConstructor\TestConstructorWPF\TestConstructorWPF\TestConstructor.mdf;Integrated Security=True");
             sqlCon.Open();
         }
         public void LoadTable(string command, DataGrid dataGrid)
