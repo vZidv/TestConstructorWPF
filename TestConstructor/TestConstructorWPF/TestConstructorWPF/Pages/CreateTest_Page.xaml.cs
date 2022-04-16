@@ -34,7 +34,7 @@ namespace TestConstructorWPF.Pages
             DataTable table = connectClass.table;
             table.Clear();
 
-            SqlDataAdapter adapter = new SqlDataAdapter($"SELECT Name FROM AdemicSubject WHERE Teacher ='{teahcer.id_teacher}'", MySqlConnectClass.sqlCon);
+            SqlDataAdapter adapter = new SqlDataAdapter($"SELECT NameSubject FROM AdemicSubject WHERE Teacher ='{teahcer.id_teacher}'", MySqlConnectClass.sqlCon);
             adapter.Fill(table);
 
             for (int i = 0; i < table.Rows.Count;)
@@ -64,8 +64,10 @@ namespace TestConstructorWPF.Pages
                 id = Convert.ToInt32(command.ExecuteScalar());
             }
 
-            MessageBox.Show($"{id}");
-            teahcer.MainFrame.Content = new Pages.FullCreateTest() { teahcer = this.teahcer,nameTest = Name_tb.Text,academicSubject = ChangeAcademicSubject_combox.Text,idTest = id };
+            //MessageBox.Show($"{id}");
+            SqlCommand comm = new SqlCommand($"Select id from AdemicSubject where NameSubject = N'{ChangeAcademicSubject_combox.Text}'", MySqlConnectClass.sqlCon);
+            MessageBox.Show($"{Convert.ToInt32( comm.ExecuteScalar())}");
+            teahcer.MainFrame.Content = new Pages.FullCreateTest() { teahcer = this.teahcer,nameTest = Name_tb.Text,academicSubject = Convert.ToInt32(comm.ExecuteScalar()),idTest = id };
         }
     }
 }

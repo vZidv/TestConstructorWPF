@@ -40,7 +40,7 @@ namespace TestConstructorWPF.Pages
             DataTable table = connectClass.table;
             table.Clear();
 
-            SqlDataAdapter adapter = new SqlDataAdapter($"SELECT Name FROM AdemicSubject WHERE Teacher ='{teahcer.id_teacher}'", MySqlConnectClass.sqlCon);
+            SqlDataAdapter adapter = new SqlDataAdapter($"SELECT NameSubject FROM AdemicSubject WHERE Teacher ='{teahcer.id_teacher}'", MySqlConnectClass.sqlCon);
             adapter.Fill(table);
 
             for (int i = 0; i < table.Rows.Count;)

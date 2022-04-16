@@ -39,9 +39,9 @@ namespace TestConstructorWPF.Pages
         {
             MySqlConnectClass.SqlConnect();
 
-            SqlCommand command = new SqlCommand("INSERT INTO AdemicSubject (Name,Description,Teacher) VALUES (@Name,@Description,@Teacher)", MySqlConnectClass.sqlCon);
+            SqlCommand command = new SqlCommand("INSERT INTO AdemicSubject (NameSubject,Description,Teacher) VALUES (@NameSubject,@Description,@Teacher)", MySqlConnectClass.sqlCon);
 
-            command.Parameters.AddWithValue("@Name", Name_tb.Text);
+            command.Parameters.AddWithValue("@NameSubject", Name_tb.Text);
             command.Parameters.AddWithValue("@Description", description_tb.Text);
             command.Parameters.AddWithValue("@Teacher", teahcer.id_teacher);
 

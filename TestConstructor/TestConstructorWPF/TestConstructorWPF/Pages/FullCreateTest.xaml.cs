@@ -23,7 +23,7 @@ namespace TestConstructorWPF.Pages
         public Windows.Teahcer_Win teahcer;
         MySqlConnectClass connectClass = new MySqlConnectClass();
 
-        public string academicSubject;
+        public int academicSubject;
         public string nameTest;
         public int idTest;
 
@@ -38,7 +38,8 @@ namespace TestConstructorWPF.Pages
             panelTypeEnter_Sp.Visibility = Visibility.Visible;
 
             ChangeTypeQuestion_combox.SelectedIndex = 0;
-            
+
+           // MessageBox.Show($"{academicSubject}");
         }
 
         private void Back_button_Click(object sender, RoutedEventArgs e)
@@ -63,9 +64,22 @@ namespace TestConstructorWPF.Pages
             }
         }
 
-        private void ChangeTypeQuestion_combox_ContextMenuClosing_1(object sender, ContextMenuEventArgs e)
-        {
 
+
+        private void EndCreate_button_Click(object sender, RoutedEventArgs e)
+        {
+            MySqlConnectClass.SqlConnect();
+
+            //SqlCommand command = new SqlCommand("INSERT INTO TestTable (Id,NameTest,idAcademicSubject,NumberQuestion,QuestionText,AnswerTrue,AnswerFalse1,AnswerFalse2,AnswerFalse3,Type)" +
+            //    " VALUES (@Id,@NameTest,@idAcademicSubject,@NumberQuestion,@QuestionText,@AnswerTrue,@AnswerFalse1,@AnswerFalse2,@AnswerFalse3,@Type)");
+
+            //command.Parameters.AddWithValue("Id", idTest);
+            //command.Parameters.AddWithValue("NameTest", nameTest);
+            //command.Parameters.AddWithValue("idAcademicSubject",);
+            //command.Parameters.AddWithValue("Id", idTest);
+            //command.Parameters.AddWithValue("Id", idTest);
+            //command.Parameters.AddWithValue("Id", idTest);
+            //command.Parameters.AddWithValue("Id", idTest);
         }
     }
 }
