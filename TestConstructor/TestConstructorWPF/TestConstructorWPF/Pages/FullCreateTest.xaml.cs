@@ -25,6 +25,7 @@ namespace TestConstructorWPF.Pages
 
         public string academicSubject;
         public string nameTest;
+        public int idTest;
 
         public FullCreateTest()
         {

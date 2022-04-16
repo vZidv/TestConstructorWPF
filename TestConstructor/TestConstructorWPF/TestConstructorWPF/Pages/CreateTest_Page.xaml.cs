@@ -51,7 +51,21 @@ namespace TestConstructorWPF.Pages
 
         private void CreateTest_button_Click(object sender, RoutedEventArgs e)
         {
-            teahcer.MainFrame.Content = new Pages.FullCreateTest() { teahcer = this.teahcer,nameTest = Name_tb.Text,academicSubject = ChangeAcademicSubject_combox.Text };
+            MySqlConnectClass.SqlConnect();
+            DataTable dataTable = connectClass.table;
+            dataTable.Clear();
+
+            SqlCommand command = new SqlCommand("Select MAX(id) From TestTable",MySqlConnectClass.sqlCon);
+            int id;
+            if (command.ExecuteScalar() == DBNull.Value)
+                id = 1;
+            else
+            {
+                id = Convert.ToInt32(command.ExecuteScalar());
+            }
+
+            MessageBox.Show($"{id}");
+            teahcer.MainFrame.Content = new Pages.FullCreateTest() { teahcer = this.teahcer,nameTest = Name_tb.Text,academicSubject = ChangeAcademicSubject_combox.Text,idTest = id };
         }
     }
 }

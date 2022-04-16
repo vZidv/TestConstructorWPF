@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TestConstructorWPF.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="750" d:DesignWidth="1100"
       Title="FullCreateTest" Loaded="Page_Loaded">
 
     <Grid>
@@ -17,6 +17,8 @@
         
         <Button Content="Назад" Style="{DynamicResource RoundedButtonApp}" x:Name="Back_button"
             Grid.Row="0" HorizontalAlignment="Left" Width="180" Height="40" Margin="10" Grid.Column="1" Click="Back_button_Click"/>
+        <Button Content="Завершить" Style="{DynamicResource RoundedButtonApp}" x:Name="EndCreate_button"
+            Grid.Row="0" HorizontalAlignment="Right" Width="180" Height="40" Margin="10" Grid.Column="1" />
         <StackPanel Grid.Row="1" Orientation="Horizontal">
          <StackPanel >
           <TextBlock Text="Вопрос" Margin="12,5,5,5"
@@ -45,7 +47,7 @@
                 </StackPanel>
                 
             </StackPanel>
-            
+
             <StackPanel x:Name="panelTypeChangeAnswer_Sp">
                 <TextBlock Text="Ответ" Margin="12,5,5,5"
                        Style="{DynamicResource TextBlockStyle}" HorizontalAlignment="Left" FontSize="26"/>
@@ -69,6 +71,12 @@
                 Grid.Row="1" Style="{DynamicResource TextboxStyle}" Height="100" Width="270" 
                  HorizontalAlignment="Left" VerticalAlignment="Top"/>
             </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="1" Margin="3"
+                    Foreground="White" FontSize="35" Style="{DynamicResource RoundedButtonForMenuApp}"
+                Height="55" Width="55" Background="OrangeRed"/>
+
         </StackPanel>
     </Grid>
 </Page>
