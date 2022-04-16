@@ -88,6 +88,9 @@
     <Compile Include="Pages\TeacherStartMenu_Page.xaml.cs">
       <DependentUpon>TeacherStartMenu_Page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Tests_Page.xaml.cs">
+      <DependentUpon>Tests_Page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Admin_Win.xaml.cs">
       <DependentUpon>Admin_Win.xaml</DependentUpon>
     </Compile>
@@ -155,6 +158,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\TeacherStartMenu_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Tests_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

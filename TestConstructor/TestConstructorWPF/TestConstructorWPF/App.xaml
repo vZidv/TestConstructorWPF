@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:TestConstructorWPF"
              xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" x:Class="TestConstructorWPF.App"
-             StartupUri="Authorization.xaml">
+             StartupUri="Windows/Teahcer_Win.xaml">
     <Application.Resources>
         <Style x:Key="RoundedButtonApp" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#bbc9db"/>

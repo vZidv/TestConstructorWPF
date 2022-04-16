@@ -12,8 +12,8 @@
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
             <Button Content="Добавить дисциплину" Margin="10" x:Name="CreateNewacAdemicSubject_Page"
                 Style="{DynamicResource RoundedButtonApp}" Height="70" Width="180" Click="CreateNewacAdemicSubject_Page_Click"/>
-            <Button Content="Тесты" Margin="10"
-                Style="{DynamicResource RoundedButtonApp}" Height="70" Width="180"/>
+            <Button Content="Тесты" Margin="10" x:Name="TestsMenu"
+                Style="{DynamicResource RoundedButtonApp}" Height="70" Width="180" Click="TestsMenu_Click"/>
         </StackPanel>
         <Button Content="Вернуться к окну аторизации" x:Name="backToAuthorization"
                 Margin="10" VerticalAlignment="Bottom"

@@ -37,5 +37,10 @@ namespace TestConstructorWPF.Pages
         {
             teahcer.MainFrame.Content = new Pages.CreateNewacAdemicSubject_Page() { teahcer = this.teahcer };
         }
+
+        private void TestsMenu_Click(object sender, RoutedEventArgs e)
+        {
+            teahcer.MainFrame.Content = new Pages.Tests_Page() {teahcer = this.teahcer};
+        }
     }
 }
