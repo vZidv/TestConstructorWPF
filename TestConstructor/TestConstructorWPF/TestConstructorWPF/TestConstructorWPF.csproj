@@ -85,6 +85,12 @@
     <Compile Include="Pages\CreateNewacAdemicSubject_Page.xaml.cs">
       <DependentUpon>CreateNewacAdemicSubject_Page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CreateTest_Page.xaml.cs">
+      <DependentUpon>CreateTest_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FullCreateTest.xaml.cs">
+      <DependentUpon>FullCreateTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\TeacherStartMenu_Page.xaml.cs">
       <DependentUpon>TeacherStartMenu_Page.xaml</DependentUpon>
     </Compile>
@@ -154,6 +160,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\CreateNewacAdemicSubject_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CreateTest_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FullCreateTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

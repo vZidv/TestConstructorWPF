@@ -49,5 +49,10 @@ namespace TestConstructorWPF.Pages
                 i++;
             }
         }
+
+        private void addTest_button_Click(object sender, RoutedEventArgs e)
+        {
+            teahcer.MainFrame.Content = new Pages.CreateTest_Page() { teahcer = this.teahcer };
+        }
     }
 }
