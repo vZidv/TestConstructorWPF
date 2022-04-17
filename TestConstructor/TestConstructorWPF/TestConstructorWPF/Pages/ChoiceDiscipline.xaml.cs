@@ -64,7 +64,7 @@ namespace TestConstructorWPF.Pages
                 i++;
             }
 
-            MessageBox.Show($"nAME  {nameDiscipline}");
+           // MessageBox.Show($"nAME  {nameDiscipline}");
             MySqlConnectClass.SqlConnect();
 
             SqlCommand command = new SqlCommand($"Select id from AdemicSubject where NameSubject = N'{nameDiscipline}'", MySqlConnectClass.sqlCon);

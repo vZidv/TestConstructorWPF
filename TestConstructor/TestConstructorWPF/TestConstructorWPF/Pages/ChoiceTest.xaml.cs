@@ -43,7 +43,7 @@ namespace TestConstructorWPF.Pages
             DataTable table = connectClass.table;
             table.Clear();
 
-            MessageBox.Show($"{idDiscipline}");
+            //MessageBox.Show($"{idDiscipline}");
 
             SqlDataAdapter adapter = new SqlDataAdapter($"Select NameTest from TestTable Where idAcademicSubject = '{idDiscipline}'", MySqlConnectClass.sqlCon);
             adapter.Fill(table);

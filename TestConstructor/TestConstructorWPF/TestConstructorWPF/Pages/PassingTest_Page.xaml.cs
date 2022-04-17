@@ -59,42 +59,55 @@ namespace TestConstructorWPF.Pages
         }
         void NextQuestion(DataTable table)
         {
-            table = connectClass.table;
+            
             MessageBox.Show($"Правильных ответов {trueAnswers}");
             numberQuestion += 1;
-            int row = 0;
-            for (int  i = 0;  i < table.Rows.Count;  i++)
+
+            if (numberQuestion <= table.Rows.Count)
             {
-                if (Convert.ToInt32(table.Rows[i][1]) == numberQuestion)
+                int row = 0;
+                for (int i = 0; i < table.Rows.Count; i++)
                 {
-                    row = i;
-                    break;
-                }                    
+                    if (Convert.ToInt32(table.Rows[i][1]) == numberQuestion)
+                    {
+                        row = i;
+                        break;
+                    }
+                }
+                ThemeTest_textblock.Text = table.Rows[row][0].ToString();
+                NumberQuestion_textblock.Text = ($"Вопрос№{table.Rows[row][1].ToString()}");
+                QuestionText_textblock.Text = table.Rows[row][2].ToString();
+                Answer = table.Rows[row][3].ToString();
+                if (table.Rows[row][7].ToString() == "EnterAnswer")
+                {
+                    enterAnswer_panel.Visibility = Visibility.Visible;
+                    ChoiceAnswer_panel.Visibility = Visibility.Hidden;
+                }
+                else if (table.Rows[row][7].ToString() == "ChangeAnswer")
+                {
+                    enterAnswer_panel.Visibility = Visibility.Hidden;
+                    ChoiceAnswer_panel.Visibility = Visibility.Visible;
+                    Random random = new Random();
+                    int rand;
+                    for (int i = 0; i < 5; i++)
+                    {
+                        // 3-6
+                        //rand = random.Next(0, 4);
+                        Answer_Button1.Content = table.Rows[row][3].ToString();
+                        Answer_Button2.Content = table.Rows[row][4].ToString();
+                        Answer_Button3.Content = table.Rows[row][5].ToString();
+                        Answer_Button4.Content = table.Rows[row][6].ToString();
+                    }
+                }
             }
-            ThemeTest_textblock.Text = table.Rows[row][0].ToString();
-            NumberQuestion_textblock.Text = ($"Вопрос№{table.Rows[row][1].ToString()}");
-            QuestionText_textblock.Text = table.Rows[row][2].ToString();
-            Answer = table.Rows[row][3].ToString();
-            if (table.Rows[row][7].ToString() == "EnterAnswer")
-            {
-                enterAnswer_panel.Visibility = Visibility.Visible;
-                ChoiceAnswer_panel.Visibility = Visibility.Hidden;
-            }
-            else if (table.Rows[row][7].ToString() == "ChangeAnswer")
+            else
             {
                 enterAnswer_panel.Visibility = Visibility.Hidden;
-                ChoiceAnswer_panel.Visibility = Visibility.Visible;
-                Random random = new Random();
-                int rand; 
-                for (int i = 0; i < 5; i++)
-                {
-                    // 3-6
-                     //rand = random.Next(0, 4);
-                    Answer_Button1.Content = table.Rows[row][3].ToString();
-                    Answer_Button2.Content = table.Rows[row][4].ToString();
-                    Answer_Button3.Content = table.Rows[row][5].ToString();
-                    Answer_Button4.Content = table.Rows[row][6].ToString();
-                }
+                ChoiceAnswer_panel.Visibility = Visibility.Hidden;
+                ThemeTest_textblock.Text = "Тест завершён!";
+                double procent = ( 100/(numberQuestion - 1)) * trueAnswers;
+                NumberQuestion_textblock.Text = $"Ваш результат: {procent}%";
+                QuestionText_textblock.Visibility = Visibility.Hidden;
             }
         }
 

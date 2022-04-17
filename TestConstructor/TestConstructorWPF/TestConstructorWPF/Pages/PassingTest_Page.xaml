@@ -12,11 +12,11 @@
         <Button Content="Выйти" Style="{DynamicResource RoundedButtonApp}" x:Name="exit_button"  FontSize="15"
             Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="40" Margin="10,10,0,10" Grid.Column="1" Click="exit_button_Click"   />
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Тема теста" x:Name="ThemeTest_textblock"
+            <TextBlock Text="Тема теста" x:Name="ThemeTest_textblock" TextAlignment="Center"
                        Style="{DynamicResource TextBlockHeaderStyle}"/>
-            <TextBlock Text="Вопрос№1" x:Name="NumberQuestion_textblock" FontSize="30" Width="160"
+            <TextBlock Text="Вопрос№1" x:Name="NumberQuestion_textblock" FontSize="30" Width="400" TextAlignment="Center"
                        Style="{DynamicResource TextBlockHeaderStyle}"/>
-            <TextBlock Text="Вопрос" x:Name="QuestionText_textblock" FontSize="30"
+            <TextBlock Text="Вопрос" x:Name="QuestionText_textblock" FontSize="30" TextAlignment="Center" 
                        Style="{DynamicResource TextBlockHeaderStyle}"/>
             <StackPanel x:Name="enterAnswer_panel" Visibility="Hidden"
                 Orientation="Horizontal" >
