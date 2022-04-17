@@ -73,7 +73,26 @@ namespace TestConstructorWPF.Pages
 
         private void ChoiceDiscipline_button_Click(object sender, RoutedEventArgs e)
         {
+            MySqlConnectClass.SqlConnect();
+            int r = dataGridView_tests.SelectedIndex;
 
+            string nameDiscipline = null;
+
+
+            for (int i = 0; i < 1;)
+            {
+                switch (i)
+                {
+
+                    case 0:
+                        TextBlock itemP = dataGridView_tests.Columns[i].GetCellContent(dataGridView_tests.Items[r]) as TextBlock;
+                        nameDiscipline = itemP.Text;
+                        break;
+                }
+                i++;
+            }
+
+            student.MainFrame.Content = new Pages.PassingTest_Page() { student = this.student, idSubject = idDiscipline, nameTest = nameDiscipline };
         }
     }
 }

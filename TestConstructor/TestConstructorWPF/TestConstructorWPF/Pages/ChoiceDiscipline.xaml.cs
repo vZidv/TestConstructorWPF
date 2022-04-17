@@ -43,9 +43,6 @@ namespace TestConstructorWPF.Pages
         {
             int r = dataGridView_Discipline.SelectedIndex;
 
-            string clientFullName = null;
-
-
             string nameDiscipline = null;
             string description = null;
 

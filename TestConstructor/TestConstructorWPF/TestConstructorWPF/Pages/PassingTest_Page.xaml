@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:TestConstructorWPF.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PassingTest_Page">
+      Title="PassingTest_Page" Loaded="Page_Loaded">
 
     <Grid>
         <Button Content="Выйти" Style="{DynamicResource RoundedButtonApp}" x:Name="exit_button"  FontSize="15"
@@ -29,15 +29,15 @@
             <StackPanel x:Name="ChoiceAnswer_panel">
              <StackPanel Orientation="Horizontal">
                 <Button x:Name="Answer_Button1" Margin="5"
-                    Style="{DynamicResource RoundedButtonApp}" Height="60" Width="200"/>
+                    Style="{DynamicResource RoundedButtonApp}" Height="60" Width="200" Click="Answer_Button1_Click"/>
                 <Button x:Name="Answer_Button2" Margin="5"
-                    Style="{DynamicResource RoundedButtonApp}" Height="60" Width="200"/>
+                    Style="{DynamicResource RoundedButtonApp}" Height="60" Width="200" Click="Answer_Button2_Click"/>
              </StackPanel>
              <StackPanel Orientation="Horizontal">
                 <Button x:Name="Answer_Button3" Margin="5"
-                    Style="{DynamicResource RoundedButtonApp}" Height="60" Width="200"/>
+                    Style="{DynamicResource RoundedButtonApp}" Height="60" Width="200" Click="Answer_Button3_Click"/>
                 <Button x:Name="Answer_Button4" Margin="5"
-                    Style="{DynamicResource RoundedButtonApp}" Height="60" Width="200"/>
+                    Style="{DynamicResource RoundedButtonApp}" Height="60" Width="200" Click="Answer_Button4_Click"/>
              </StackPanel>
             </StackPanel>
         </StackPanel>
