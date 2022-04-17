@@ -20,6 +20,7 @@ namespace TestConstructorWPF.Pages
 
     public partial class PassingTest_Page : Page
     {
+        public Windows.Teahcer_Win teahcer;
         public Windows.Student_Win student;
         MySqlConnectClass connectClass = new MySqlConnectClass();
         DataTable table = new DataTable();
@@ -31,6 +32,7 @@ namespace TestConstructorWPF.Pages
 
         int trueAnswers = 0;
         string Answer = string.Empty;
+        public bool isTeacehr = false;
         public PassingTest_Page()
         {
             InitializeComponent();
@@ -40,6 +42,9 @@ namespace TestConstructorWPF.Pages
 
         private void exit_button_Click(object sender, RoutedEventArgs e)
         {
+            if (isTeacehr)
+            teahcer.MainFrame.Content = new Pages.Tests_Page() { teahcer = this.teahcer };
+            else
             student.MainFrame.Content = new Pages.ChoiceDiscipline() { student = this.student };
         }
 
@@ -60,7 +65,7 @@ namespace TestConstructorWPF.Pages
         void NextQuestion(DataTable table)
         {
             
-            MessageBox.Show($"Правильных ответов {trueAnswers}");
+            //MessageBox.Show($"Правильных ответов {trueAnswers}");
             numberQuestion += 1;
 
             if (numberQuestion <= table.Rows.Count)

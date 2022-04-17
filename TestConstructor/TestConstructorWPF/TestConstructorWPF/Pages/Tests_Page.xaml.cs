@@ -100,5 +100,27 @@ namespace TestConstructorWPF.Pages
             SortingTable(table);
             MessageBox.Show($"{idSubject}");
         }
+
+        private void editTest_button_Click(object sender, RoutedEventArgs e)
+        {
+            int r = dataGridView_tests.SelectedIndex;
+
+            string nameDiscipline = null;
+
+
+            for (int i = 0; i < 1;)
+            {
+                switch (i)
+                {
+
+                    case 0:
+                        TextBlock itemP = dataGridView_tests.Columns[i].GetCellContent(dataGridView_tests.Items[r]) as TextBlock;
+                        nameDiscipline = itemP.Text;
+                        break;
+                }
+                i++;
+            }
+            teahcer.MainFrame.Content = new Pages.PassingTest_Page() {teahcer = this.teahcer, isTeacehr = true,nameTest = nameDiscipline};
+        }
     }
 }

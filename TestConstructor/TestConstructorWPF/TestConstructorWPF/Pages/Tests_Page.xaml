@@ -63,10 +63,10 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding NameTest}" Header="Название теста" MinWidth="170" Width="*"/>
                 <DataGridTextColumn Binding="{Binding idAcademicSubject}" Header="Дисциплина" MinWidth="170" Width="*"/>
-                <DataGridTemplateColumn Header="Изменить" MinWidth="170" Width="*">
+                <DataGridTemplateColumn Header="Пройти" MinWidth="170" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Изменить" x:Name="editTest_button" />
+                            <Button Content="Пройти" x:Name="editTest_button" Click="editTest_button_Click" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
