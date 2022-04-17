@@ -75,7 +75,7 @@
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Content="1" Margin="3"
+            <Button Content="1" Margin="3" Visibility="Hidden"
                     Foreground="White" FontSize="35" Style="{DynamicResource RoundedButtonForMenuApp}"
                 Height="55" Width="55" Background="OrangeRed"/>
 

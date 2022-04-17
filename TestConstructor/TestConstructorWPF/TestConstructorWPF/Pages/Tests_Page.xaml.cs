@@ -122,5 +122,44 @@ namespace TestConstructorWPF.Pages
             }
             teahcer.MainFrame.Content = new Pages.PassingTest_Page() {teahcer = this.teahcer, isTeacehr = true,nameTest = nameDiscipline};
         }
+
+        private void deleteTest_button_Click(object sender, RoutedEventArgs e)
+        {
+            int r = dataGridView_tests.SelectedIndex;
+
+            string nameTest = null;
+            string subject = null;
+
+            for (int i = 0; i < 2;)
+            {
+                switch (i)
+                {
+                    case 0:
+                        TextBlock itemL = dataGridView_tests.Columns[i].GetCellContent(dataGridView_tests.Items[r]) as TextBlock;
+                        nameTest = itemL.Text;
+                        break;
+                    case 1:
+                        TextBlock itemP = dataGridView_tests.Columns[i].GetCellContent(dataGridView_tests.Items[r]) as TextBlock;
+                        subject = itemP.Text;
+                        break;
+                }
+                i++;
+            }
+            MySqlConnectClass.SqlConnect();
+           // MessageBox.Show($"{nameTest}");
+            SqlDataAdapter adapter3 = new SqlDataAdapter($"Select id from TestTable where NameTest = N'{nameTest}'", MySqlConnectClass.sqlCon);
+            DataTable tab = new DataTable();
+            adapter3.Fill(tab);
+           // MessageBox.Show($"{tab.Rows.Count}");
+            for (int i = 0; i <= tab.Rows.Count - 1; )
+            {
+                SqlCommand command = new SqlCommand($"DELETE FROM TestTable WHERE NameTest = N'{nameTest}' ", MySqlConnectClass.sqlCon);
+                command.ExecuteNonQuery();
+                i++;
+            }
+            
+
+             MessageBox.Show("Тест удалён!");
+        }
     }
 }
