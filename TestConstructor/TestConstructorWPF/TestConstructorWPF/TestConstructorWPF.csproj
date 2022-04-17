@@ -97,6 +97,9 @@
     <Compile Include="Pages\FullCreateTest.xaml.cs">
       <DependentUpon>FullCreateTest.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PassingTest_Page.xaml.cs">
+      <DependentUpon>PassingTest_Page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\TeacherStartMenu_Page.xaml.cs">
       <DependentUpon>TeacherStartMenu_Page.xaml</DependentUpon>
     </Compile>
@@ -185,6 +188,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\FullCreateTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PassingTest_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -45,7 +45,9 @@ namespace TestConstructorWPF.Pages
 
             MessageBox.Show($"{idDiscipline}");
 
-            SqlDataAdapter adapter = new SqlDataAdapter("Select NameTest from TestTable Where idAcademicSubject = '{idDiscipline}'", MySqlConnectClass.sqlCon);
+            SqlDataAdapter adapter = new SqlDataAdapter($"Select NameTest from TestTable Where idAcademicSubject = '{idDiscipline}'", MySqlConnectClass.sqlCon);
+            adapter.Fill(table);
+            SortingTable(table);
             SortingTable(table);
         }
         void SortingTable(DataTable table)
@@ -67,6 +69,11 @@ namespace TestConstructorWPF.Pages
                 i++;
             }
             dataGridView_tests.ItemsSource = table.DefaultView;
+        }
+
+        private void ChoiceDiscipline_button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

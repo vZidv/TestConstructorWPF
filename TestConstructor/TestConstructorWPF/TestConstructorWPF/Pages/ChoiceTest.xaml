@@ -62,7 +62,7 @@
                 <DataGridTemplateColumn Header="Выбрать" MinWidth="170" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Выбрать" x:Name="ChoiceDiscipline_button" />
+                            <Button Content="Выбрать" x:Name="ChoiceDiscipline_button" Click="ChoiceDiscipline_button_Click" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
