@@ -22,7 +22,7 @@ namespace TestConstructorWPF.Pages
     {
         public Windows.Teahcer_Win teahcer;
         MySqlConnectClass connectClass = new MySqlConnectClass();
-
+        private int idSubject;
         public Tests_Page()
         {
             MySqlConnectClass.SqlConnect();
@@ -49,22 +49,28 @@ namespace TestConstructorWPF.Pages
                 ChangeAcademicSubject_combox.Items.Add(table.Rows[i][0]);
                 i++;
             }
-            ChangeAcademicSubject_combox.SelectedIndex = 0;
+           // ChangeAcademicSubject_combox.SelectedIndex = 0;
             #endregion
 
-            //SqlCommand command = new SqlCommand("SELECT  FROM AdemicSubject WHERE Teacher = '{teahcer.id_teacher}'")
+            SqlCommand comm = new SqlCommand($"Select id from AdemicSubject where NameSubject = N'{ChangeAcademicSubject_combox.Text}'", MySqlConnectClass.sqlCon);
+            idSubject = Convert.ToInt32(comm.ExecuteScalar());
             table.Clear();
             adapter = new SqlDataAdapter($"SELECT TestTable.NameTest,AdemicSubject.NameSubject[idAcademicSubject] " +
-                $"FROM TestTable INNER JOIN AdemicSubject ON AdemicSubject.id = TestTable.idAcademicSubject", MySqlConnectClass.sqlCon);
+                $"FROM TestTable INNER JOIN AdemicSubject ON AdemicSubject.id = TestTable.idAcademicSubject Where TestTable.idAcademicSubject = '{idSubject}'", MySqlConnectClass.sqlCon);
             adapter.Fill(table);
-            // List<DataRow> rows = new List<DataRow>();
+            SortingTable(table);
+        }
+
+        private void addTest_button_Click(object sender, RoutedEventArgs e)
+        {
+            teahcer.MainFrame.Content = new Pages.CreateTest_Page() { teahcer = this.teahcer };
+        }
+
+        void SortingTable(DataTable table)
+        {
             DataRow row;
-            //for (int i = 0; i < table.Rows.Count;)
-            //{
-            //    rows.Add(table.Rows[i]);
-            //    i++;
-            //}
-            for (int i = 0; i < table.Rows.Count; )
+
+            for (int i = 0; i < table.Rows.Count;)
             {
                 for (int j = i + 1; j < table.Rows.Count;)
                 {
@@ -73,18 +79,26 @@ namespace TestConstructorWPF.Pages
                         row = table.Rows[j];
                         table.Rows.Remove(row);
                     }
-                        
+
                     j++;
                 }
                 i++;
             }
             dataGridView_tests.ItemsSource = table.DefaultView;
-
         }
 
-        private void addTest_button_Click(object sender, RoutedEventArgs e)
+        private void ChangeAcademicSubject_combox_DropDownClosed(object sender, EventArgs e)
         {
-            teahcer.MainFrame.Content = new Pages.CreateTest_Page() { teahcer = this.teahcer };
+            SqlCommand comm = new SqlCommand($"Select id from AdemicSubject where NameSubject = N'{ChangeAcademicSubject_combox.Text}'", MySqlConnectClass.sqlCon);
+            idSubject = Convert.ToInt32(comm.ExecuteScalar());
+
+            DataTable table = connectClass.table;
+            table.Clear();
+            SqlDataAdapter adapter2 = new SqlDataAdapter($"SELECT TestTable.NameTest,AdemicSubject.NameSubject[idAcademicSubject] " +
+                $"FROM TestTable INNER JOIN AdemicSubject ON AdemicSubject.id = TestTable.idAcademicSubject Where TestTable.idAcademicSubject = '{idSubject}'", MySqlConnectClass.sqlCon);
+            adapter2.Fill(table);
+            SortingTable(table);
+            MessageBox.Show($"{idSubject}");
         }
     }
 }
