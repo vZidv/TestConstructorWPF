@@ -98,7 +98,7 @@ namespace TestConstructorWPF.Pages
                 $"FROM TestTable INNER JOIN AdemicSubject ON AdemicSubject.id = TestTable.idAcademicSubject Where TestTable.idAcademicSubject = '{idSubject}'", MySqlConnectClass.sqlCon);
             adapter2.Fill(table);
             SortingTable(table);
-            MessageBox.Show($"{idSubject}");
+            //MessageBox.Show($"{idSubject}");
         }
 
         private void editTest_button_Click(object sender, RoutedEventArgs e)

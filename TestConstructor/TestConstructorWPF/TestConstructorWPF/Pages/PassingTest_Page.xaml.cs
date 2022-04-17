@@ -112,7 +112,22 @@ namespace TestConstructorWPF.Pages
                 ThemeTest_textblock.Text = "Тест завершён!";
                 double procent = ( 100/(numberQuestion - 1)) * trueAnswers;
                 NumberQuestion_textblock.Text = $"Ваш результат: {procent}%";
-                QuestionText_textblock.Visibility = Visibility.Hidden;
+                QuestionText_textblock.Text = $"Вы ответилт правильно на {trueAnswers} вопроса из {numberQuestion - 1}.";
+                if (!isTeacehr)
+                {
+                    MySqlConnectClass.SqlConnect();
+
+                    SqlCommand sqlCommand = new SqlCommand("INSERT INTO Estimation (idStudent,Estimation,idDiscipline,NameTest) VALUES" +
+                        " (@idStudent,@Estimation,@idDiscipline,@NameTest)", MySqlConnectClass.sqlCon);
+
+                    sqlCommand.Parameters.AddWithValue("@idStudent", student.idStudent);
+                    sqlCommand.Parameters.AddWithValue("@Estimation", procent);
+                    sqlCommand.Parameters.AddWithValue("@idDiscipline", idSubject);
+                    sqlCommand.Parameters.AddWithValue("@NameTest", nameTest);
+
+                    sqlCommand.ExecuteNonQuery();
+                    MessageBox.Show("Данные сохранены");
+                }
             }
         }
 

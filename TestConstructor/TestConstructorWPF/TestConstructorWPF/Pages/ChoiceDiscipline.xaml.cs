@@ -71,5 +71,15 @@ namespace TestConstructorWPF.Pages
 
             student.MainFrame.Content = new Pages.ChoiceTest() { idDiscipline = Convert.ToInt32(command.ExecuteScalar()),student = this.student};
         }
+
+        private void refresh_button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Grade_button_Click(object sender, RoutedEventArgs e)
+        {
+            student.MainFrame.Content = new Pages.GradesStrudent_Page() { student = this.student};
+        }
     }
 }
