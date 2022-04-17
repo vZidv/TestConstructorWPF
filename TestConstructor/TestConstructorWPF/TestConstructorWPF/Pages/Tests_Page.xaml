@@ -58,17 +58,23 @@
         <ComboBox x:Name="ChangeAcademicSubject_combox"
             Width="180" Height="40" HorizontalAlignment="Left" Margin="10">
         </ComboBox>
-        <DataGrid x:Name="dataGridView_Users" IsReadOnly="True" 
+        <DataGrid x:Name="dataGridView_tests" IsReadOnly="True" 
             Grid.Row="1" Margin="5,0,5,0" BorderThickness="0" AutoGenerateColumns="False" Grid.ColumnSpan="2">
 
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Login}" Header="Логин" MinWidth="170" Width="*"/>
-                <DataGridTextColumn Binding="{Binding Password}" Header="Пароль" MinWidth="170" Width="*"/>
-                <DataGridTextColumn Binding="{Binding Type}" Header="Тип" MinWidth="170" Width="*"/>
+                <DataGridTextColumn Binding="{Binding NameTest}" Header="Название теста" MinWidth="170" Width="*"/>
+                <DataGridTextColumn Binding="{Binding idAcademicSubject}" Header="Дисциплина" MinWidth="170" Width="*"/>
+                <DataGridTemplateColumn Header="Изменить" MinWidth="170" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Изменить" x:Name="editTest_button" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Удалить" MinWidth="170" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Удалить" x:Name="deletePerson_button" />
+                            <Button Content="Удалить" x:Name="deleteTest_button" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

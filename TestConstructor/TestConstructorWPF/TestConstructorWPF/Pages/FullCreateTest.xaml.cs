@@ -75,7 +75,8 @@ namespace TestConstructorWPF.Pages
            
             MySqlConnectClass.SqlConnect();
             AddQuestion();
-            
+
+            teahcer.MainFrame.Content = new Pages.Tests_Page() { teahcer = this.teahcer };
             MessageBox.Show($"Тест добавлен!");
         }
 
