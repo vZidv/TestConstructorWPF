@@ -82,6 +82,12 @@
     <Compile Include="Pages\AdminMain_Page.xaml.cs">
       <DependentUpon>AdminMain_Page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ChoiceDiscipline.xaml.cs">
+      <DependentUpon>ChoiceDiscipline.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ChoiceTest.xaml.cs">
+      <DependentUpon>ChoiceTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CreateNewacAdemicSubject_Page.xaml.cs">
       <DependentUpon>CreateNewacAdemicSubject_Page.xaml</DependentUpon>
     </Compile>
@@ -99,6 +105,9 @@
     </Compile>
     <Compile Include="Windows\Admin_Win.xaml.cs">
       <DependentUpon>Admin_Win.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Student_Win.xaml.cs">
+      <DependentUpon>Student_Win.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Teahcer_Win.xaml.cs">
       <DependentUpon>Teahcer_Win.xaml</DependentUpon>
@@ -159,6 +168,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ChoiceDiscipline.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ChoiceTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\CreateNewacAdemicSubject_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -180,6 +197,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\Admin_Win.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Student_Win.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
