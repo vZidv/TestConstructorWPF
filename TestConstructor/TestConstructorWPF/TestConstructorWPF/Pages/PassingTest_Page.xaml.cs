@@ -158,5 +158,13 @@ namespace TestConstructorWPF.Pages
                 trueAnswers += 1;
             NextQuestion(table);
         }
+
+        private void Answer_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (enterAnswer_textBox.Text == Answer)
+                trueAnswers += 1;
+            enterAnswer_textBox.Text = string.Empty;
+            NextQuestion(table);
+        }
     }
 }

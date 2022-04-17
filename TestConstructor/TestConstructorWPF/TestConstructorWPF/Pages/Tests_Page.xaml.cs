@@ -72,12 +72,15 @@ namespace TestConstructorWPF.Pages
 
             for (int i = 0; i < table.Rows.Count;)
             {
-                for (int j = i + 1; j < table.Rows.Count;)
+                for (int j = 0; j < table.Rows.Count;)
                 {
-                    if (table.Rows[i][0].ToString() == table.Rows[j][0].ToString())
+                    if (j != i)
                     {
-                        row = table.Rows[j];
-                        table.Rows.Remove(row);
+                        if (table.Rows[i][0].ToString() == table.Rows[j][0].ToString())
+                        {
+                            row = table.Rows[j];
+                            table.Rows.Remove(row);
+                        }
                     }
 
                     j++;

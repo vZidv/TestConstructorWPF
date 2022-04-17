@@ -18,15 +18,20 @@
                        Style="{DynamicResource TextBlockHeaderStyle}"/>
             <TextBlock Text="Вопрос" x:Name="QuestionText_textblock" FontSize="30" TextAlignment="Center" 
                        Style="{DynamicResource TextBlockHeaderStyle}"/>
-            <StackPanel x:Name="enterAnswer_panel" Visibility="Hidden"
+            <StackPanel x:Name="enterAnswer_panel">
+             <StackPanel  Visibility="Visible"
                 Orientation="Horizontal" >
                 <TextBlock Text="Ответ" FontSize="25"
                     Style="{DynamicResource TextBlockStyle}">
                 </TextBlock>
                 <TextBox Width="300" x:Name="enterAnswer_textBox"
                     Style="{DynamicResource TextboxStyle}"/>
+                
+             </StackPanel>
+                <Button x:Name="Answer_Button" Margin="5" Content="Ответить"
+                    Style="{DynamicResource RoundedButtonApp}" Height="60" Width="200" Click="Answer_Button_Click"/>
             </StackPanel>
-            <StackPanel x:Name="ChoiceAnswer_panel">
+            <StackPanel x:Name="ChoiceAnswer_panel" Visibility="Hidden">
              <StackPanel Orientation="Horizontal">
                 <Button x:Name="Answer_Button1" Margin="5"
                     Style="{DynamicResource RoundedButtonApp}" Height="60" Width="200" Click="Answer_Button1_Click"/>
