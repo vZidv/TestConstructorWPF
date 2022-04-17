@@ -56,17 +56,19 @@ namespace TestConstructorWPF.Pages
             dataTable.Clear();
 
             SqlCommand command = new SqlCommand("Select MAX(id) From TestTable",MySqlConnectClass.sqlCon);
-            int id;
-            if (command.ExecuteScalar() == DBNull.Value)
-                id = 1;
-            else
+            int id = 0;
+            if (Convert.ToInt32(command.ExecuteScalar()) == 0)
             {
-                id = Convert.ToInt32(command.ExecuteScalar());
+                id = 1;
+            }
+            else if (Convert.ToInt32(command.ExecuteScalar()) >= 1)
+            {
+                id = Convert.ToInt32(command.ExecuteScalar()) + 1;
             }
 
             //MessageBox.Show($"{id}");
             SqlCommand comm = new SqlCommand($"Select id from AdemicSubject where NameSubject = N'{ChangeAcademicSubject_combox.Text}'", MySqlConnectClass.sqlCon);
-            MessageBox.Show($"{Convert.ToInt32( comm.ExecuteScalar())}");
+            //MessageBox.Show($"{id}");
             teahcer.MainFrame.Content = new Pages.FullCreateTest() { teahcer = this.teahcer,nameTest = Name_tb.Text,academicSubject = Convert.ToInt32(comm.ExecuteScalar()),idTest = id };
         }
     }
