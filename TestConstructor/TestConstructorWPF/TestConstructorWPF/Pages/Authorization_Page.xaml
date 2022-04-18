@@ -66,7 +66,8 @@
         </Style>
     </Page.Resources>
     <Grid>
-        <Image Height="120" Width="400" VerticalAlignment="Top"  Margin="0,30,0,0"/>
+        <Image Height="160" Width="430" VerticalAlignment="Top"  
+               Margin="0,30,0,0" Source="/TestConstructorWPF;component/Source/Logo.png"/>
 
         <TextBlock FontSize="24" Text="Логин" FontWeight="Bold" Foreground="#FFC5C5C5"
                    HorizontalAlignment="Center" VerticalAlignment="Center" Panel.ZIndex="1" Margin="0,0,0,155"
@@ -130,12 +131,11 @@
             </Button>
         </StackPanel>
         <StackPanel>
-            <Polygon Stroke="#bbc9db" Points=" 
-                 0,430
-                 465,430" Margin="40,-20,40,0"/>
-            <TextBlock FontSize="20" FontWeight ="Bold"  
-                       Text="Руководство по эксплуатации" HorizontalAlignment="Center" 
-                       Margin="10" Foreground="#bbc9db"/>
+            <Polygon Stroke="#CFFFDC" Points=" 
+                 0,402
+                 465,402                     
+                 465,400
+                  0,400" Margin="70,-95,70,0" Fill="#CFFFDC"                   />
         </StackPanel>
     </Grid>
 </Page>

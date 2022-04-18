@@ -43,7 +43,8 @@ namespace TestConstructorWPF.Pages
             {
                 MySqlConnectClass.SqlConnect();
 
-                SqlCommand sqlCommand = new SqlCommand("INSERT INTO UserTable (Login,Password,Type,UserName,Surname,Secondname) VALUES (@Login,@Password,@Type,@UserName,@Surname,@Secondname)", MySqlConnectClass.sqlCon);
+                SqlCommand sqlCommand = new SqlCommand("INSERT INTO UserTable (Login,Password,Type,UserName,Surname,Secondname,GroupStudent)" +
+                    " VALUES (@Login,@Password,@Type,@UserName,@Surname,@Secondname,@GroupStudent)", MySqlConnectClass.sqlCon);
 
                 sqlCommand.Parameters.AddWithValue("@Login", login_textbox.Text);
                 sqlCommand.Parameters.AddWithValue("@Password", Password_textbox.Text);
@@ -51,6 +52,7 @@ namespace TestConstructorWPF.Pages
                 sqlCommand.Parameters.AddWithValue("@UserName", name_textbox.Text);
                 sqlCommand.Parameters.AddWithValue("@Surname", surname_textbox.Text);
                 sqlCommand.Parameters.AddWithValue("@Secondname", secondname_textbox.Text);
+                sqlCommand.Parameters.AddWithValue("@GroupStudent", Group_textbox.Text);
 
 
 
@@ -62,6 +64,21 @@ namespace TestConstructorWPF.Pages
         private void TypeUser_comboBox_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             
+        }
+
+        private void TypeUser_comboBox_DropDownClosed(object sender, EventArgs e)
+        {
+            if (TypeUser_comboBox.Text == "student")
+            {
+                Group_textbox.Visibility = Visibility.Visible;
+                Group_TextBlock.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Group_textbox.Visibility = Visibility.Hidden;
+                Group_TextBlock.Visibility = Visibility.Hidden;
+            }
+
         }
     }
 }

@@ -227,6 +227,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Pages\Logo.png" />
+    <Resource Include="Source\Logo.png" />
     <Content Include="TestConstructor.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

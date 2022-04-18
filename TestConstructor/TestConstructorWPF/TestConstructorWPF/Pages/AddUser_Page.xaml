@@ -96,7 +96,7 @@
                 <ComboBox x:Name="TypeUser_comboBox"  FontSize="20" Margin="16,18,16,18"
                           VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                           BorderThickness = "0" Foreground="DarkGray"
-                    Width="250" Height="35" DataContextChanged="TypeUser_comboBox_DataContextChanged">
+                    Width="250" Height="35" DataContextChanged="TypeUser_comboBox_DataContextChanged" DropDownClosed="TypeUser_comboBox_DropDownClosed">
                     <TextBlock Text="admin"/>
                     <TextBlock Text="student"/>
                     <TextBlock Text="teacher"/>
@@ -109,6 +109,8 @@
                     Style="{DynamicResource TextBlockStyle}"/>
                 <TextBlock Text="Отчество" Margin="16,35,16,18"
                     Style="{DynamicResource TextBlockStyle}"/>
+                <TextBlock Text="Группа" Margin="16,35,16,18" Visibility="Hidden" x:Name="Group_TextBlock"
+                    Style="{DynamicResource TextBlockStyle}"/>
             </StackPanel>
             <StackPanel>
                 <TextBox x:Name="name_textbox"
@@ -116,6 +118,8 @@
                 <TextBox x:Name="surname_textbox"
                 Width="250" Height="35" Style="{DynamicResource TextboxStyle}"/>
                 <TextBox x:Name="secondname_textbox"
+                Width="250" Height="35" Style="{DynamicResource TextboxStyle}"/>
+                <TextBox x:Name="Group_textbox" Visibility="Hidden"
                 Width="250" Height="35" Style="{DynamicResource TextboxStyle}"/>
 
             </StackPanel>
